@@ -33,7 +33,7 @@ Prerequisites
 	•	Obtain the connection string for your Azure Storage account.
 	3.	Clone the Repository:
 
-     ```bash
+    ```bash
     git clone https://github.com/josiah-mbao/azure-photo-uploader.git
     cd azure-photo-uploader
     ```
@@ -44,6 +44,7 @@ Prerequisites
 	•	local_directory: The path to the directory containing your photos.
 
 	5.	Run the Script: Execute the script to start uploading your photos to Azure Blob Storage:
+
     ```bash
     python backup_photos.py
     ```
