@@ -3,25 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Azure Photo Uploader</title>
+    <title>Azure Photo Uploader Dashboard</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 <body>
-    <div class="container">
-        <h1>Upload Photos to Azure</h1>
-        <form action="{{ url_for('main.upload') }}" method="POST" enctype="multipart/form-data" id="upload-form">
-            <input type="file" name="folder_path" webkitdirectory directory multiple id="file-input">
-            <button type="submit">Upload</button>
-        </form>
+    <div class="dashboard">
+        <!-- Sidebar for navigation -->
+        <nav class="sidebar">
+            <h2>Azure Uploader</h2>
+            <ul>
+                <li><a href="#">Upload Photos</a></li>
+                <li><a href="#">Upload History</a></li>
+                <li><a href="#">Storage Stats</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </nav>
 
-        <!-- Progress bar -->
-        <div id="progress-bar">
-            <div id="progress-fill"></div>
+        <!-- Main content area -->
+        <div class="content">
+            <header>
+                <h1>Upload Photos to Azure</h1>
+            </header>
+            
+            <!-- File upload form -->
+            <form action="{{ url_for('main.upload') }}" method="POST" enctype="multipart/form-data" id="upload-form">
+                <input type="file" name="folder_path" webkitdirectory directory multiple id="file-input">
+                <button type="submit">Upload</button>
+            </form>
+
+            <!-- Progress bar -->
+            <div id="progress-bar">
+                <div id="progress-fill"></div>
+            </div>
+
+            <!-- Preview section for images -->
+            <div id="preview"></div>
         </div>
-
-        <!-- Preview section for images -->
-        <div id="preview"></div>
     </div>
 
     <script>
